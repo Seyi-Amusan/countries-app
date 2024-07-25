@@ -25,6 +25,8 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        run: npm run deploy
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Seyi-Amusan/countries-app.git
+          npm run deploy
