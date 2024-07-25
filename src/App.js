@@ -13,7 +13,7 @@ function filterBySearchString(countryList, str) {
 
 function filterByRegion(countryList, region) {
   return countryList.filter((country) => {
-    return country.region == region
+    return country.region === region
   })
 }
 
