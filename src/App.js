@@ -18,9 +18,6 @@ function filterByRegion(countryList, region) {
 }
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   state = { 
     countries: [],
