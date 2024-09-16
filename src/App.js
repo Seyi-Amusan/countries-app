@@ -24,10 +24,12 @@ class App extends Component {
   state = {
     countries: [],
     filteredCountries: [],
-    isDarkTheme: true,
+    isDarkTheme: false,
   };
 
+
   componentDidMount() {
+    
     fetch(`${process.env.PUBLIC_URL}/data.json`)
       .then((response) => response.json())
       .then((data) => {

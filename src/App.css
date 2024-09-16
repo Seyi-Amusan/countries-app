@@ -141,7 +141,7 @@ h2{
 }
 
 .country-card{
-  height: 22rem;
+  height: 19rem;
   overflow: hidden;
   box-shadow: 1px 1px 2.5rem rgba(0, 0, 0, 0.3);
   background-color: var(--card-bg-color);

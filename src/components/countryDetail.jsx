@@ -1,12 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
+const CountryDetail = () => {
+    const location = useLocation();
+    const selectedCountry = location.state?.country;
 
-class CountryDetail extends Component {
+    return (
+        <div>
+            {selectedCountry ? (
+                <div>
+                    <h1>{selectedCountry.name}</h1>
+                    <p>Capital: {selectedCountry.capital}</p>
+                    {/* Render more details as needed */}
+                </div>
+            ) : (
+                <p>No country selected!</p>
+            )}
+        </div>
+    );
+};
 
-    state = {  }
-    render() { 
-        return ( <div>vvvvvvvvvvvv</div> );
-    }
-}
- 
 export default CountryDetail;
