@@ -62,7 +62,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename='countries-app'>
         <div className="App">
           <div className="header">
             <h2>Where in the world</h2>
