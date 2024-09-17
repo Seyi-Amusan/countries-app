@@ -1,11 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import CountryCard from './countryCard';  // Assuming this is your card component
+import CountryCard from './countryCard';  
 
 const Countries = ({ countryList }) => {
-    const navigate = useNavigate(); // useNavigate hook for navigation
+    const navigate = useNavigate(); 
 
-    // Handle the click event
     const handleCardClick = (country) => {
         // Navigate to the country's detail page with the country data in the route state
         navigate(`/${country.name}`, { state: { country } });

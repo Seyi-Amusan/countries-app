@@ -24,7 +24,7 @@ class App extends Component {
   state = {
     countries: [],
     filteredCountries: [],
-    isDarkTheme: false,
+    isLightTheme: false,
   };
 
 
@@ -39,12 +39,12 @@ class App extends Component {
 
   toggleTheme = () => {
     this.setState(
-      (prevState) => ({ isDarkTheme: !prevState.isDarkTheme }),
+      (prevState) => ({ isLightTheme: !prevState.isLightTheme }),
       () => {
-        if (this.state.isDarkTheme) {
-          document.documentElement.classList.add('dark-theme');
+        if (this.state.isLightTheme) {
+          document.documentElement.classList.add('light-theme');
         } else {
-          document.documentElement.classList.remove('dark-theme');
+          document.documentElement.classList.remove('light-theme');
         }
       }
     );
@@ -69,7 +69,7 @@ class App extends Component {
           <div className="header">
             <h2>Where in the world</h2>
             <button onClick={this.toggleTheme}>
-              {this.state.isDarkTheme ? 'Light Mode' : 'Dark Mode'}
+              {this.state.isLightTheme ? 'Light Mode' : 'Dark Mode'}
             </button>
           </div>
 
@@ -92,7 +92,7 @@ class App extends Component {
           </div>
 
           <Routes>
-            <Route index element={<Countries countryList={this.state.filteredCountries} />} />
+            <Route index path='/' element={<Countries countryList={this.state.filteredCountries} />} />
             <Route path="/:countryName" element={<CountryDetail />} />
           </Routes>
         </div>
