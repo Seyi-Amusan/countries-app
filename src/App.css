@@ -179,11 +179,11 @@ h2{
 .country-detail-back-button,
 .theme-toggler-button{
   display: flex;
+}
 
-  .icon{
-    width: 1rem;
-    margin-right: .5rem;
-  }
+.icon{
+  width: 1rem;
+  margin-right: .5rem;
 }
 .country-detail-flag{
   width: 80%;
@@ -221,7 +221,16 @@ h2{
   .filter-box{
     display: grid;
     grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
     column-gap: 1rem;
+  }
+
+  input{
+    width: unset;
+  }
+
+  select{
+    justify-self: end;
   }
 
   .filter-box, .countries-container, .country-detail{
