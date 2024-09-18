@@ -21,9 +21,12 @@ const CountryDetail = () => {
         <div className='country-detail'>
             {selectedCountry ? (
                 <>
-                    <button onClick={handleBackClick}>Back</button>
+                    <button onClick={handleBackClick} className='country-detail-back-button'>
+                        <img src="images/left-arrow-svgrepo-com.svg" alt="" className='icon' />
+                        <p>Back</p>
+                    </button>
                     <div className='detail-container'>
-                        <img src={selectedCountry.flag} alt={`${selectedCountry} flag`} className='country-detail-flag' />
+                        <img src={selectedCountry.flag} alt={`${selectedCountry.name} flag`} className='country-detail-flag'/>
                         <div>
                             <h2 className='country-detail-name'>{selectedCountry.name}</h2>
 

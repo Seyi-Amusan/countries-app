@@ -68,8 +68,9 @@ class App extends Component {
         <div className="App">
           <div className="header">
             <h2>Where in the world</h2>
-            <button onClick={this.toggleTheme}>
-              {this.state.isLightTheme ? 'Light Mode' : 'Dark Mode'}
+            <button onClick={this.toggleTheme} className='theme-toggler-button'>
+              <img src={this.state.isLightTheme ? 'images/light-mode-svgrepo-com.svg' : 'images/dark-mode-night-moon-svgrepo-com.svg'} alt='' className='icon'/>
+              <p>{this.state.isLightTheme ? 'Light Mode' : 'Dark Mode'}</p>
             </button>
           </div>
 
