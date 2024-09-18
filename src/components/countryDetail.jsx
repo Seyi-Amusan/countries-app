@@ -1,18 +1,27 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const CountryDetail = () => {
     const location = useLocation();
     const selectedCountry = location.state?.country;
 
-    console.log(selectedCountry);
-    
+    const navigate = useNavigate()
+    const handleBackClick = () => {
+        navigate('/'); 
+    };
+
+    useEffect(() => {
+        if (!selectedCountry) {
+            navigate('/'); // Navigate back to the list if no country data
+        }
+    }, [selectedCountry, navigate]);
+
 
     return (
         <div className='country-detail'>
             {selectedCountry ? (
                 <>
-                    <button>Back</button>
+                    <button onClick={handleBackClick}>Back</button>
                     <div className='detail-container'>
                         <img src={selectedCountry.flag} alt={`${selectedCountry} flag`} className='country-detail-flag' />
                         <div>
@@ -29,9 +38,9 @@ const CountryDetail = () => {
                                 </div>
 
                                 <div className='detail-box'>
-                                    <p><b>Top Level Domain: </b></p>
-                                    <p><b>Currencies: </b></p>
-                                    <p><b>Languages: </b></p>
+                                    <p><b>Top Level Domain: </b>{selectedCountry.topLevelDomain[0]}</p>
+                                    <p><b>Currencies: </b>{selectedCountry.currencies[0].name}, {selectedCountry.currencies[0].code}, {selectedCountry.currencies[0].symbol}</p>
+                                    <p><b>Languages: </b>{selectedCountry.languages[0].name}</p>
                                 </div>
                             </div>
                             

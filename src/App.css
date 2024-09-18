@@ -18,9 +18,10 @@
 
 
 body {
-background-color: var(--background-color);
-color: var(--text-color);
-transition: background-color 0.25s linear, color 0.25s linear;
+  font-family: "Nunito Sans", system-ui;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.25s linear, color 0.25s linear;
 }
 
 button{
@@ -208,6 +209,12 @@ h2{
 
   .header{
       padding: 0 1rem;
+  }
+
+  .filter-box{
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 1.6rem;
   }
 
   .filter-box, .countries-container, .country-detail{
